@@ -1,178 +1,62 @@
-import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
+import { viteBundler } from '@vuepress/bundler-vite'
 import { plumeTheme } from 'vuepress-theme-plume'
 
 export default defineUserConfig({
-  base: '/',
   lang: 'zh-CN',
-  title: 'akav',
-  description: 'av',
-
   head: [
-    // 配置站点图标
-    ['link', { rel: 'icon', type: 'image/png', href: '/XXXXXXXXXXX.jpg' }],
+    // ['link', { rel: 'icon', href: '/images/favicon.ico' }],
+    ["meta", {"name": "keywords", "content": "机场,便宜机场,梯子,vpn,科学上网,翻墙,clash,trojan,python,服务器"}],
+    ["meta", {"name": "description", "content": "开发、运维、科学上网相关内容，打破技术壁垒"}],
   ],
-
-  bundler: viteBundler(),
-  shouldPrefetch: false, // 站点较大，页面数量较多时，不建议启用
-
   theme: plumeTheme({
-    /* 添加您的部署域名, 有助于 SEO, 生成 sitemap */
-    hostname: 'https://akav.cc',
+    // logo: '/images/logo.svg',
+    home: '/',
+    hostname: 'https://www.ermao.net',
+    footer: { message: "© 2025 CFF 版权所有" },
 
-    /* 文档仓库配置，用于 editLink */
-    // docsRepo: '',
-    // docsDir: 'docs',
-    // docsBranch: '',
-
-    /* 页内信息 */
-    // editLink: true,
-    // lastUpdated: true,
-    // contributors: true,
-    // changelog: false,
-
-    /**
-     * 博客
-     * @see https://theme-plume.vuejs.press/config/basic/#blog
-     */
-    // blog: false, // 禁用博客
-    // blog: {
-    //   postList: true, // 是否启用文章列表页
-    //   tags: true, // 是否启用标签页
-    //   archives: true, // 是否启用归档页
-    //   categories: true, // 是否启用分类页
-    //   postCover: 'right', // 文章封面位置
-    //   pagination: 15, // 每页显示文章数量
-    // },
-
-    /* 博客文章页面链接前缀 */
-    article: '/article/',
-
-    /**
-     * 编译缓存，加快编译速度
-     * @see https://theme-plume.vuejs.press/config/basic/#cache
-     */
-    cache: 'filesystem',
-
-    /**
-     * 为 markdown 文件自动添加 frontmatter 配置
-     * @see https://theme-plume.vuejs.press/config/basic/#autofrontmatter
-     */
-    // autoFrontmatter: {
-    //   permalink: true,  // 是否生成永久链接
-    //   createTime: true, // 是否生成创建时间
-    //   title: true,      // 是否生成标题
-    // },
-
+    navbar: [
+      // { text: '二猫子博客', link: '/blog/' },
+      // { text: '标签', link: '/blog/tags/' },
+      // { text: '归档', link: '/blog/archives/' },
+      // { text: '友链' , link: '/friends/'},
+    ],
+    profile: {
+        name: 'CFF',
+        description: '一个神秘的IT程序猿',
+        // avatar: '/images/logo.svg',
+      },
+    social: [
+        { icon: 'github', link: 'https://github.com/ermaozi' },
+        {
+          icon: {svg: '<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M41.4193 7.30899C41.4193 7.30899 45.3046 5.79399 44.9808 9.47328C44.8729 10.9883 43.9016 16.2908 43.1461 22.0262L40.5559 39.0159C40.5559 39.0159 40.3401 41.5048 38.3974 41.9377C36.4547 42.3705 33.5408 40.4227 33.0011 39.9898C32.5694 39.6652 24.9068 34.7955 22.2086 32.4148C21.4531 31.7655 20.5897 30.4669 22.3165 28.9519L33.6487 18.1305C34.9438 16.8319 36.2389 13.8019 30.8426 17.4812L15.7331 27.7616C15.7331 27.7616 14.0063 28.8437 10.7686 27.8698L3.75342 25.7055C3.75342 25.7055 1.16321 24.0823 5.58815 22.459C16.3807 17.3729 29.6555 12.1786 41.4193 7.30899Z"></path> </g></svg>'},
+          link: 'https://t.me/cff66778'
+        },
+        {
+          icon: {svg: '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="style=fill"> <g id="email"> <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M7 2.75C5.38503 2.75 3.92465 3.15363 2.86466 4.1379C1.79462 5.13152 1.25 6.60705 1.25 8.5V15.5C1.25 17.393 1.79462 18.8685 2.86466 19.8621C3.92465 20.8464 5.38503 21.25 7 21.25H17C18.615 21.25 20.0754 20.8464 21.1353 19.8621C22.2054 18.8685 22.75 17.393 22.75 15.5V8.5C22.75 6.60705 22.2054 5.13152 21.1353 4.1379C20.0754 3.15363 18.615 2.75 17 2.75H7ZM19.2285 8.3623C19.5562 8.10904 19.6166 7.63802 19.3633 7.31026C19.1101 6.98249 18.6391 6.9221 18.3113 7.17537L12.7642 11.4616C12.3141 11.8095 11.6858 11.8095 11.2356 11.4616L5.6886 7.17537C5.36083 6.9221 4.88982 6.98249 4.63655 7.31026C4.38328 7.63802 4.44367 8.10904 4.77144 8.3623L10.3185 12.6486C11.3089 13.4138 12.691 13.4138 13.6814 12.6486L19.2285 8.3623Z"></path> </g> </g> </g></svg>'},
+          link: 'mailto:admin@ermao.net'
+        }
+      ],
     plugins: {
-      /**
-       * Shiki 代码高亮
-       * @see https://theme-plume.vuejs.press/config/plugins/code-highlight/
-       */
-      // shiki: {
-      //   // 强烈建议预设代码块高亮语言，插件默认加载所有语言会产生不必要的时间开销
-      //   languages: ['shell', 'bash', 'typescript', 'javascript'],
-      //   twoslash: true, // 启用 twoslash
-      //   whitespace: true, // 启用 空格/Tab 高亮
-      //   lineNumbers: true, // 启用行号
-      // },
-
-      /* 本地搜索, 默认启用 */
-      // search: true,
-
-      /**
-       * Algolia DocSearch
-       * 启用此搜索需要将 本地搜索 search 设置为 false
-       * @see https://theme-plume.vuejs.press/config/plugins/search/#algolia-docsearch
-       */
-      // docsearch: {
-      //   appId: '',
-      //   apiKey: '',
-      //   indexName: '',
-      // },
-
-      /* 文章字数统计、阅读时间，设置为 false 则禁用 */
-      // readingTime: true,
-
-      /**
-       * markdown enhance
-       * @see https://theme-plume.vuejs.press/config/plugins/markdown-enhance/
-       */
-      // markdownEnhance: {
-      //   chartjs: true,
-      //   echarts: true,
-      //   mermaid: true,
-      //   flowchart: true,
-      // },
-
-      /**
-       *  markdown power
-       * @see https://theme-plume.vuejs.press/config/plugin/markdown-power/
-       */
-      // markdownPower: {
-      //   pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
-      //   caniuse: true,      // 启用 caniuse 语法  @[caniuse](feature_name)
-      //   plot: true,         // 启用隐秘文本语法 !!xxxx!!
-      //   bilibili: true,     // 启用嵌入 bilibili视频 语法 @[bilibili](bid)
-      //   youtube: true,      // 启用嵌入 youtube视频 语法 @[youtube](video_id)
-      //   artPlayer: true,    // 启用嵌入 artPlayer 本地视频 语法 @[artPlayer](url)
-      //   audioReader: true,  // 启用嵌入音频朗读功能 语法 @[audioReader](url)
-      //   icons: true,        // 启用内置图标语法  :[icon-name]:
-      //   codepen: true,      // 启用嵌入 codepen 语法 @[codepen](user/slash)
-      //   replit: true,       // 启用嵌入 replit 语法 @[replit](user/repl-name)
-      //   codeSandbox: true,  // 启用嵌入 codeSandbox 语法 @[codeSandbox](id)
-      //   jsfiddle: true,     // 启用嵌入 jsfiddle 语法 @[jsfiddle](user/id)
-      //   npmTo: true,        // 启用 npm-to 容器  ::: npm-to
-      //   demo: true,         // 启用 demo 容器  ::: demo
-      //   repl: {             // 启用 代码演示容器
-      //     go: true,         // ::: go-repl
-      //     rust: true,       // ::: rust-repl
-      //     kotlin: true,     // ::: kotlin-repl
-      //   },
-      //   imageSize: 'local', // 启用 自动填充 图片宽高属性，避免页面抖动
-      // },
-
-      /**
-       * 在 Markdown 文件中导入其他 markdown 文件内容。
-       * @see https://theme-plume.vuejs.press/guide/markdown/include/
-       */
-      // markdownInclude: true,
-
-      /**
-       * Markdown 数学公式
-       * @see https://theme-plume.vuejs.press/config/plugins/markdown-math/
-       */
-      // markdownMath: {
-      //   type: 'katex',
-      // },
-
-      /**
-       * 水印
-       * @see https://theme-plume.vuejs.press/guide/features/watermark/
-       */
-      // watermark: true,
-
-      /**
-       * 评论 comments
-       * @see https://theme-plume.vuejs.press/guide/features/comments/
-       */
-      // comment: {
-      //   provider: '', // "Artalk" | "Giscus" | "Twikoo" | "Waline"
-      //   comment: true,
-      //   repo: '',
-      //   repoId: '',
-      //   category: '',
-      //   categoryId: '',
-      //   mapping: 'pathname',
-      //   reactionsEnabled: true,
-      //   inputPosition: 'top',
-      // },
+     
     },
-
-    /**
-     * 加密功能
-     * @see https://theme-plume.vuejs.press/guide/features/encryption/
-     */
-    // encrypt: {},
+    markdown: {
+      collapse: true,
+    }
+  }),
+  bundler: viteBundler({
+    viteOptions: {
+      optimizeDeps: {
+        exclude: [
+          'mark.js/src/vanilla.js',
+          '@vueuse/integrations/useFocusTrap',
+          '@vueuse/core',
+          'bcrypt-ts/browser',
+          '@vuepress/helper/client',
+          '@iconify/vue',
+          '@iconify/vue/offline'
+        ]
+      }
+    }
   }),
 })
